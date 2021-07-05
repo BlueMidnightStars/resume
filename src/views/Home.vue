@@ -42,8 +42,8 @@
                 <p class="heaedr-hovwe_button-select_item" @click="addUserinfo(0)">关于我</p>
               </div>
             </div>
-            <div class="heaedr-hovwe_button">
-              <p class="heaedr-hovwe_button-title heaedr-hovwe_button_show">文件</p>
+            <div class="heaedr-hovwe_button heaedr-hovwe_button_show">
+              <p class="heaedr-hovwe_button-title heaedr-hovwe_button-title-show">文件</p>
               <!-- <div class="heaedr-hovwe_button-select_list">
                 <p class="heaedr-hovwe_button-select_item">App设计稿原型</p>
                 <p class="heaedr-hovwe_button-select_item">观看App设计稿原型</p>
@@ -135,6 +135,10 @@
             <div class="app-img-section">
               <img src="@/assets/dx.svg" alt="斗西计划" @click="addSrc(2)" class="app-img">
               <p class="app-img_desc">斗西计划</p>
+            </div>
+            <div class="app-img-section">
+               <a class="target" href="https://github.com/Wuzhijixian" target="_blank"><img src="@/assets/GitHub.svg" alt="斗西计划" class="app-img"></a>
+              <p class="app-img_desc">GitHub</p>
             </div>
           </div>
         </div>
