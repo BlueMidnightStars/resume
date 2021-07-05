@@ -43,19 +43,48 @@
               </div>
             </div>
             <div class="heaedr-hovwe_button">
-              <p class="heaedr-hovwe_button-title">文件</p>
-              <div class="heaedr-hovwe_button-select_list">
+              <p class="heaedr-hovwe_button-title heaedr-hovwe_button_show">文件</p>
+              <!-- <div class="heaedr-hovwe_button-select_list">
                 <p class="heaedr-hovwe_button-select_item">App设计稿原型</p>
                 <p class="heaedr-hovwe_button-select_item">观看App设计稿原型</p>
                 <p class="heaedr-hovwe_button-select_item">案例研究</p>
                 <p class="heaedr-hovwe_button-select_item">界面讨论</p>
-              </div>
+              </div> -->
             </div>
             <div class="heaedr-hovwe_button heaedr-hovwe_button_show">
               <p class="heaedr-hovwe_button-title  heaedr-hovwe_button-title-show">看法</p>
               <!-- <div class="heaedr-hovwe_button-select_list">
                 <p class="heaedr-hovwe_button-select_item"></p>
               </div> -->
+            </div>
+             <div class="heaedr-hovwe_button">
+              <p class="heaedr-hovwe_button-title">技术支持</p>
+              <div class="heaedr-hovwe_button-select_list">
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://cn.vuejs.org/" target="_blank">vue</a>
+                </p>
+                 <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://developers.weixin.qq.com/miniprogram/dev/framework/" target="_blank">微信小程序</a>
+                </p>
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://www.qiniu.com/" target="_blank">七牛云</a>
+                </p>
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="http://element.eleme.io/#/zh-CN" target="_blank">element</a>
+                </p>
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://lanhuapp.com/?home" target="_blank">蓝湖</a>
+                </p>
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://www.kancloud.cn/liuwave/quill/1409423" target="_blank">quill</a>
+                </p>
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://www.expressjs.com.cn/" target="_blank">expressjs</a>
+                </p>
+                <p class="heaedr-hovwe_button-select_item">
+                  <a class="target" href="https://knexjs.org/" target="_blank">knex</a>
+                </p>
+              </div>
             </div>
             <div class="heaedr-hovwe_button">
               <p class="heaedr-hovwe_button-title" >关于我</p>
@@ -103,6 +132,10 @@
               <img src="@/assets/dx.svg" alt="斗西" @click="addSrc(1)" class="app-img">
               <p class="app-img_desc">斗西</p>
             </div>
+            <div class="app-img-section">
+              <img src="@/assets/dx.svg" alt="斗西计划" @click="addSrc(2)" class="app-img">
+              <p class="app-img_desc">斗西计划</p>
+            </div>
           </div>
         </div>
       </div>
@@ -126,7 +159,7 @@ export default {
 
       }],
       srcZ: [0, 0, 0],
-      src: ['https://www.aitschool.com/', 'https://www.daylab.cn/works', 'https://www.kugou.com/'],
+      src: ['https://www.aitschool.com/', 'https://www.daylab.cn/works', 'https://www.home-plan.cn/'],
       windowContainer: [],
       flexible: false,
       week: null,
@@ -221,7 +254,10 @@ export default {
       this.windowContainer.splice(index, 1)
     },
     addSrc (index) {
-      if (this.windowContainer.indexOf(this.src[index])) this.windowContainer.push(this.src[index])
+      if (this.windowContainer.indexOf(this.src[index])) {
+        this.windowContainer.unshift(this.src[index])
+        this.srcZ[0] = this.Zindex += 2
+      }
     },
     editFlexible () {
       this.flexible = !this.flexible
@@ -257,7 +293,6 @@ export default {
       location.reload()
     },
     close () {
-      console.log(window)
       window.opener = null
       window.open('', '_self')
       window.close()
@@ -458,6 +493,10 @@ export default {
                 margin: 10px 0;
                 &:hover{
                   background-color: #0063ec;
+                }
+                a{
+                  text-decoration: none;
+                  color: #fff;
                 }
               }
             }
